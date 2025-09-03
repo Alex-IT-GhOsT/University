@@ -2,4 +2,6 @@
 
 namespace App\Contracts\Repositories;
 
-interface StudentRepositoryInterface{}
+use App\Contracts\BaseRepositoryInterface;
+
+interface StudentRepositoryInterface extends BaseRepositoryInterface{}
