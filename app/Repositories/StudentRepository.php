@@ -3,11 +3,12 @@
 namespace App\Repositories;
 
 use App\Contracts\BaseRepositoryInterface;
+use App\Contracts\Repositories\StudentRepositoryInterface;
 use App\Models\Student;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
-class StudentRepository implements BaseRepositoryInterface
+class StudentRepository implements StudentRepositoryInterface
 {
     public function getAll(): Collection
     {

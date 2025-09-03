@@ -2,7 +2,12 @@
 
 namespace App\Providers;
 
+use App\Contracts\Repositories\ClassRoomRepositoryInterface;
+use App\Contracts\Services\ClassRoomServiceInterface;
+use App\Contracts\Services\StudentServiceInterface;
+use App\Repositories\ClassRoomRepository;
 use App\Repositories\StudentRepository;
+use App\Service\ClassRoomService;
 use App\Service\StudentService;
 use Illuminate\Support\ServiceProvider;
 
@@ -13,8 +18,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind('StudentRepositoryInterface', StudentRepository::class);
-        $this->app->bind('StudentServiceInterface', StudentService::class);
+        $this->app->bind(StudentServiceInterface::class, StudentRepository::class);
+        $this->app->bind(StudentServiceInterface::class, StudentService::class);
+        $this->app->bind(ClassRoomRepositoryInterface::class, ClassRoomRepository::class);
+        $this->app->bind(ClassRoomServiceInterface::class, ClassRoomService::class);
     }
 
     /**
