@@ -2,24 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Contracts\Services\LectionServiceInterface;
+use App\Http\Requests\StoreLectionRequest;
+use App\Http\Requests\UpdateLectionRequest;
 
 class LectionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    public function __construct(
+        private LectionServiceInterface $lectionService
+    ){}
     public function index()
     {
-        //
+        return response()->json($this->lectionService->getAll());
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreLectionRequest $request)
     {
-        //
+
     }
 
     /**
@@ -33,7 +35,7 @@ class LectionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateLectionRequest $request, string $id)
     {
         //
     }

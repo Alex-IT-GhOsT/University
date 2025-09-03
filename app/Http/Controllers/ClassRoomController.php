@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Contracts\Services\ClassRoomServiceInterface;
 use App\Http\Requests\StoreClassRoomRequest;
 use App\Http\Requests\UpdateClassRoomRequest;
-use App\Service\ClassRoomService;
-use Illuminate\Http\Request;
 
 class ClassRoomController extends Controller
 {
     public function __construct(
-        private ClassRoomService $classRoomService
+        private ClassRoomServiceInterface $classRoomService
     )
     {}
     public function index()
