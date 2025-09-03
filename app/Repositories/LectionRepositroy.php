@@ -2,12 +2,12 @@
 
 namespace App\Repositories;
 
-use App\Contracts\BaseRepositoryInterface;
+use App\Contracts\Repositories\LectionRepositoryInterface;
 use App\Models\Lection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 
-class LectionRepositroy implements BaseRepositoryInterface
+class LectionRepositroy implements LectionRepositoryInterface
 {
 
     public function getAll(): Collection
