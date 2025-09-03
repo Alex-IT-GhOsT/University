@@ -3,7 +3,7 @@
 namespace App\Contracts;
 
 use Illuminate\Database\Eloquent\Model;
-use Ramsey\Collection\Collection;
+use Illuminate\Support\Collection;
 
 interface BaseRepositoryInterface
 {
