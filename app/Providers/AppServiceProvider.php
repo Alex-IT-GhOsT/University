@@ -3,12 +3,16 @@
 namespace App\Providers;
 
 use App\Contracts\Repositories\ClassRoomRepositoryInterface;
+use App\Contracts\Repositories\LectionRepositoryInterface;
 use App\Contracts\Repositories\StudentRepositoryInterface;
 use App\Contracts\Services\ClassRoomServiceInterface;
+use App\Contracts\Services\LectionServiceInterface;
 use App\Contracts\Services\StudentServiceInterface;
 use App\Repositories\ClassRoomRepository;
+use App\Repositories\LectionRepositroy;
 use App\Repositories\StudentRepository;
 use App\Service\ClassRoomService;
+use App\Service\LectionService;
 use App\Service\StudentService;
 use Illuminate\Support\ServiceProvider;
 
@@ -23,6 +27,8 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(StudentServiceInterface::class, StudentService::class);
         $this->app->bind(ClassRoomRepositoryInterface::class, ClassRoomRepository::class);
         $this->app->bind(ClassRoomServiceInterface::class, ClassRoomService::class);
+        $this->app->bind(LectionRepositoryInterface::class, LectionRepositroy::class);
+        $this->app->bind(LectionServiceInterface::class, LectionService::class);
     }
 
     /**
