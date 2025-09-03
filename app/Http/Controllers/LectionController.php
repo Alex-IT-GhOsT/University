@@ -21,7 +21,8 @@ class LectionController extends Controller
      */
     public function store(StoreLectionRequest $request)
     {
-
+        $lection = $this->lectionService->create($request->validated());
+        return response()->json($lection);
     }
 
     /**
@@ -29,7 +30,8 @@ class LectionController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $lection = $this->lectionService->getLectionById($id);
+        return response()->json($lection);
     }
 
     /**
@@ -37,7 +39,8 @@ class LectionController extends Controller
      */
     public function update(UpdateLectionRequest $request, string $id)
     {
-        //
+        $lection = $this->lectionService->update($id, $request->validated());
+        return response()->json($lection);
     }
 
     /**
@@ -45,6 +48,6 @@ class LectionController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $this->lectionService->delete($id);
     }
 }
